@@ -10,12 +10,13 @@ public class TestListaDeEnterosEnlazada {
 
 	public static void main(String[] args) {
 		ListaDeEnteros lista = new ListaDeEnterosEnlazada();
-		boolean ok = true;
+	//	boolean ok = true;
 		Scanner s = new Scanner(System.in);
 		int num;	
 		Imprimir imprime;
+		ListaDeEnteros list = new ListaDeEnterosEnlazada();
 		
-		while(ok) {
+	/*	while(ok) {
 			System.out.println("Ingrese un numero, e ingrese 0 (cero) para finalizar");
 			num = s. nextInt();
 			if(num != 0) {
@@ -30,14 +31,15 @@ public class TestListaDeEnterosEnlazada {
 		}
 		/*1.5 Escriba un método recursivo que imprima los elementos de una lista en 
 		sentido inverso. La lista la recibe por parámetro.*/
-		lista.comenzar();
+	/*	lista.comenzar();
 		imprime = new Imprimir();
-		imprime.impRecursivo(lista);
+		imprime.impRecursivo(lista); */
 		
 		imprime = new Imprimir();
 		System.out.println("Ingrese un valor entero");
 		num = s.nextInt();
-		imprime.sucesion(num);
+		lista = imprime.sucesion(num,list);
+		imprime.impRecursivo(lista);
 		s.close();
 	}
 }

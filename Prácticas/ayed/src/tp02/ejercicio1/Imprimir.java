@@ -11,7 +11,8 @@ Es decir, la sucesión 6, 3, 10, 5, 16, 8, 4, 2, 1. Para cualquier n con el que
 package tp02.ejercicio1;
 
 public class Imprimir {
-
+	
+	ListaDeEnteros lista = new ListaDeEnterosEnlazada();
 	
 	public Imprimir() {
 		
@@ -24,17 +25,20 @@ public class Imprimir {
 		}	
 		
 	}	
-	public void sucesion(int n) {
-		System.out.println(n);
+	public ListaDeEnteros sucesion(int n, ListaDeEnteros lista) {
+		lista.agregarFinal(n);
+		//System.out.println(n);
 		if(n != 1) {
 			if(n % 2 == 0) {
 				n = n/2;
-				sucesion(n);
+				sucesion(n,lista);
 			}
-			else{
+			else
+			{
 				n = (n*3)+1;
-				sucesion(n);
+				sucesion(n,lista);
 			}
 		}
+		return lista;
 	}
 }
